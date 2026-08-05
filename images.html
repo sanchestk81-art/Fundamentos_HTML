@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhos</title>
+</head>
+<style>
+    .img-pequena{
+        width: 30%;
+        height: 40%;
+        
+    }
+    .img-destaque{
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+    img{
+        border-radius: 10px;
+        height: px;
+        border: 2px dashed black;
+    }
+    .div-imagens{
+        margin-top: 30px;
+        border: 2px solid black;
+        background-color: #f1c6ff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    body{
+        background-color: #fab4f2;
+    }
+</style>
+
+<body>
+    <div>
+        <img class="img-destaque" src="south park.jpg" alt="desenho do south park">
+    </div>
+
+<div class="div-imagens">
+    <img class="img-pequena" src="my little pony.jpg" alt="desenho do my little pony" width="300" ">
+    <img class="img-pequena" src="Gumball.jpg" alt="desenho do gumball" width="300" ">
+    <img class="img-pequena" src="Ursos Sem Curso.jpg" alt="desenho dos ursinhos" width="300" ">
+</div>
+</body>
+</html>

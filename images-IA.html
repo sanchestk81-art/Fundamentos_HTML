@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Desenhos Favoritos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#f7b2ff,#ffd5f7);
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:#5b0069;
+    margin-bottom:25px;
+    font-size:45px;
+    text-shadow:2px 2px 5px rgba(0,0,0,.2);
+}
+
+.img-destaque{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
+    border:4px solid white;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+    transition:0.5s;
+}
+
+.img-destaque:hover{
+    transform:scale(1.02);
+}
+
+.div-imagens{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.img-pequena{
+    width:300px;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    border:3px solid white;
+    box-shadow:0 8px 15px rgba(0,0,0,.3);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.img-pequena:hover{
+    transform:scale(1.08);
+    box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
+
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:#4a004f;
+    font-size:18px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:32px;
+    }
+
+    .img-destaque{
+        height:250px;
+    }
+
+    .img-pequena{
+        width:90%;
+        height:220px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎬 Meus Desenhos Favoritos</h1>
+
+<img class="img-destaque" src="south park.jpg" alt="South Park">
+
+<div class="div-imagens">
+
+    <img class="img-pequena" src="my little pony.jpg" alt="My Little Pony">
+
+    <img class="img-pequena" src="Gumball.jpg" alt="Gumball">
+
+    <img class="img-pequena" src="Ursos Sem Curso.jpg" alt="Ursos Sem Curso">
+
+</div>
+
+<footer>
+    Feito com ❤️ usando HTML e CSS
+</footer>
+
+</body>
+</html>
