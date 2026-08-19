@@ -1,101 +1,416 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Minhas Aulas de HTML</title>
 
+    <!-- Ícone da página -->
+    <link rel="icon" type="image/x-icon" href="oscar.ico.jpg">
 
-<link rel="icon" type="image/png" href="oscar.ico.jpg">
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Sekuya&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Sekuya&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CORPO DA PÁGINA */
+        body {
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #7a1f1f,
+                #c2592c,
+                #ff9a62
+            );
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 30px 15px;
+        }
+
+        /* TÍTULO */
+        .logo {
+            text-align: center;
+            margin-bottom: 25px;
+
+            animation: aparecer 1s ease;
+        }
+
+        .logo h1 {
+            color: #ffffff;
+
+            font-family: "Sekuya", system-ui;
+
+            font-size: 55px;
+
+            text-shadow:
+                3px 3px 0px #8f0909,
+                5px 5px 10px rgba(0, 0, 0, 0.5);
+
+            letter-spacing: 3px;
+        }
+
+        /* SUBTÍTULO DO TÍTULO */
+        .logo p {
+            color: #ffe5d0;
+            font-size: 17px;
+            margin-top: 8px;
+        }
+
+        /* CAIXA PRINCIPAL */
+        .container {
+            width: 100%;
+            max-width: 850px;
+
+            background-color: #ffdbb4;
+
+            border: 4px solid #ab0000;
+
+            border-radius: 25px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.35);
+
+            animation: subir 1s ease;
+        }
+
+        /* TEXTO INTRODUTÓRIO */
+        .descricao {
+            text-align: center;
+
+            color: #3b1515;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+
+            line-height: 1.5;
+        }
+
+        /* TÍTULOS DAS SEÇÕES */
+        h3 {
+            color: #8f0909;
+
+            text-align: center;
+
+            margin: 25px 0 15px;
+
+            font-family: "Sekuya", system-ui;
+
+            font-size: 22px;
+        }
+
+        /* LISTA DOS LINKS */
+        .links {
+            list-style: none;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        /* LINKS */
+        .links li a {
+            display: block;
+
+            text-decoration: none;
+
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #ffe9d5
+            );
+
+            color: #8f0909;
+
+            border: 2px solid #d13b25;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            font-size: 17px;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* EFEITO DOS LINKS */
+        .links li a:hover {
+            background: #8f0909;
+
+            color: white;
+
+            transform: translateY(-5px) scale(1.02);
+
+            box-shadow:
+                0 8px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* SEÇÃO DE IA */
+        .ia {
+            border-top: 2px solid #d13b25;
+
+            padding-top: 10px;
+        }
+
+        /* REDES SOCIAIS */
+        .social {
+            text-align: center;
+
+            margin-top: 30px;
+
+            border-top: 2px solid #d13b25;
+
+            padding-top: 25px;
+        }
+
+        .social h4 {
+            color: #8f0909;
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+
+            font-family: "Sekuya", system-ui;
+        }
+
+        /* ÍCONE LINKEDIN */
+        .redes {
+            width: 65px;
+            height: 65px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid #8f0909;
+
+            transition: all 0.3s ease;
+
+            box-shadow:
+                0 5px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        /* EFEITO DO LINKEDIN */
+        .redes:hover {
+            transform: rotate(8deg) scale(1.15);
+
+            box-shadow:
+                0 8px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        /* RODAPÉ */
+        footer {
+            color: white;
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            text-align: center;
+
+            opacity: 0.9;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subir {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVIDADE PARA CELULAR */
+        @media (max-width: 600px) {
+
+            .logo h1 {
+                font-size: 40px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .links {
+                grid-template-columns: 1fr;
+            }
+
+            .descricao {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
 </head>
-<Style>
 
-.logo{
-    h1{
-        color: #8f0909;
-        text-shadow: 2px 2px 4px #000000; /* Adiciona sombra ao texto */
-        font-family: "Sekuya", system-ui;
-        font-weight: 400;
-    }
-}
+<body>
 
-    body{
-        background: #c2592c;
-    }
-   
+    <!-- TÍTULO -->
+    <div class="logo">
 
-
-.div{
-        border: 5px solid rgb(171, 0, 0);
-        background-color: #ffdbb4;
-        height: 400px;
-        width: 800px;
-        margin: auto;
-}
-    ul{
-        color: #030403;
-        text-align: center
-    }
-    h1{
-        color: rgb(235, 26, 26);
-        margin-top: 20px;
-        margin: auto;
-        text-shadow: #8f0909, #c2592c;
-    }
-    h3{
-        color: #030403;
-        text-align: center;
-        margin-top: 20px;
-    }
-.redes{
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        margin: 10px;
-    }
-        
-
-
-</Style>
-    
-
-    <body>
-
-    <div class = "logo">
         <h1>HTML</h1>
+
+        <p>
+            Minhas aulas e projetos desenvolvidos durante o curso
+        </p>
+
+    </div>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+
+        <p class="descricao">
+            📚 Esse é o conjunto de sites que criei durante
+            as aulas de HTML.
+        </p>
+
+        <!-- AULAS -->
+        <h3>📖 Minhas Aulas</h3>
+        <ul class="links">
+
+            <li>
+                <a target="_blank" href="aula1.html">
+                    💻 Aula 1
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="aula2.html">
+                    💻 Aula 2
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="aula3.html">
+                    💻 Aula 3
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="Culinária.html">
+                    🍔 Culinária
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="Filme.html">
+                    🎬 Filmes
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="Musicas.html">
+                    🎵 Músicas
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- PROJETOS MELHORADOS -->
+        <div class="ia">
+
+            <h3>🤖 Projetos Melhorados com IA</h3>
+
+            <ul class="links">
+
+                <li>
+                    <a target="_blank" href="images-IA.html">
+                        🎨 Desenhos
+                    </a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="personal_page_IA.html">
+                        👤 Página Pessoal
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- REDES SOCIAIS -->
+        <div class="social">
+
+            <h4>🌐 Redes Sociais</h4>
+
+            <a
+                target="_blank"
+                href="https://www.linkedin.com/in/oscar-augusto-oliveira-2b0b1a1b3/"
+            >
+
+                <img
+                    class="redes"
+                    src="linkedin.png"
+                    alt="LinkedIn"
+                >
+
+            </a>
+
+        </div>
+
     </div>
 
-<div class = "div"> 
-  
-    <h3>Isso é todos os sites que eu criei durante as aulas de HTML</h3>
-    <ul>
-    <a target = "_blank" href = "aula1.html" >Aula 1</a><br>
-    <a target ="_blank" href="aula2.html" >Aula 2</a><br>
-    <a target ="_blank" href="aula3.html" >Aula 3</a><br>
-    <a target ="_blank" href="Culinária.html" >Culinária</a><br>
-    <a target ="_blank" href="Filme.html" >Filmes</a><br>
-    <a target ="_blank" href="Musicas.html" >Músicas</a><br>
-    <h3>Melhoradas com a ajuda da IA</h3>
-    <a target ="_blank" href="images-IA.html" >Desenhos</a><br> 
-    <a target ="_blank" href="personal_page_IA.html" >Página Pessoal</a><br> 
-    </ul>
 
-</div>
+    <!-- RODAPÉ -->
+    <footer>
 
- <div = class = "redes">
+        © 2026 — Sanches
 
-    <h3>Minhas Redes Sociais</h3>
-            <a href="https://github.com/sanchestk81-art" target="_blank">
-                <img class="logos" src="github.png" alt="GitHub">
-            </a>
+    </footer>
 
-            <a href="https://www.linkedin.com/in/mariana-pozenato-sanches-b0591a40a/" target="_blank">
-                <img class="logos" src="linkedin.png" alt="LinkedIn">
-            </a>
-</div>
-      
 </body>
+
 </html>
